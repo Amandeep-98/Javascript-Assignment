@@ -8,14 +8,13 @@ import { PipelistPipe } from './pipelist.pipe';
 import { HighlightDirective } from './highlight.directive';
 
 import { ContentListComponent } from './content-list/content-list.component';
-import { ContentCardComponent } from './content-card/content-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,    
     PipelistPipe,
     HighlightDirective,    
-    ContentListComponent, ContentCardComponent
+    ContentListComponent
   ],
   imports: [
     BrowserModule,
