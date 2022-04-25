@@ -1,17 +1,22 @@
-<div>
-    <h4 style="color: blue">LIST OF BRANDS:</h4>
-</div>
-<div style="display: flex;">
-    <div *ngFor="let content of contentList; let i = index" >
-        <div [ngClass]="(i > 0) ? contentcard: firstcard">
-        <p><strong>ID:</strong>   {{content.id}}</p>
-        <p><strong>TITLE:</strong>  {{content.title}}</p>
-        <img src="{{content.imgURL}}" width="240" height="216" alt="" (click)="imageClick(i)">
-        <p><strong>DESCRIPTION:</strong>  {{content.description}}</p>
-        <p><strong>PRIZE:</strong>  {{content.prize}}</p>
-        <p><strong>SIZE:<span *ngFor="let size of content?.tags">{{" "}}{{ size }}</span></strong></p>
-    </div>
-        
-    </div>
-</div>
+<form class="example" style="margin:auto;max-width:400px">
+    <input type="text" placeholder="Search.." #search name="search2">
+    <button type="submit" (click)="filterMovieType(search.value, $event)">Submit</button>
+  </form>
+  <div>
+      <h4 *ngIf="contentExist" class="contentExist">Content Exist</h4>
+      <h4 *ngIf="contentDoesNotExist" class="contentDoesNotExist">Content Does not Exist</h4>
+  </div>
 
+<h1 style="text-transform: uppercase;">loop where the type is not passed into the pipe</h1>
+<!--  -->
+<app-content-card *ngFor="let item of (movieList | drama:type)" [class]="'card'" [movie]="item"></app-content-card>
+<hr>
+<h1 style="text-transform: uppercase;">loop where the type is drama</h1>
+<app-content-card *ngFor="let item of (movieList | drama:type1)" [class]="'drama'" [movie]="item"></app-content-card>
+<hr>
+<h1 style="text-transform: uppercase;">loop where the type is adventure</h1>
+<app-content-card *ngFor="let item of (movieList | drama:type2)" [class]="'adventure'" [movie]="item"></app-content-card>
+<hr>
+<h1 style="text-transform: uppercase;">loop where the type is animation</h1>
+<app-content-card *ngFor="let item of (movieList | drama:type3)" [class]="'animation'" [movie]="item"></app-content-card>
+<hr>

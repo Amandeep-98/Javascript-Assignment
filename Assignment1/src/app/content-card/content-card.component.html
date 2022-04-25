@@ -1,1 +1,7 @@
-<p>content-card works!</p>
+<div class="card">
+    <div class="name"><h4>{{ movie.name }}</h4></div>
+    <div class="body">{{ movie ? movie.body : "" }}</div>
+    <div class="image-center"><img [src]="movie ? movie.imageUrl : ''"></div>
+    <!-- <div *ngif="movie ? movie.taste: ''" class="taste">{{ movie ? movie.taste : "" }}</div> -->
+    <div class="type">{{ movie ? movie.type : "" }}</div>
+        </div>
