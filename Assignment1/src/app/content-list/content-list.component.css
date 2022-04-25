@@ -1,0 +1,21 @@
+.contentcard{
+    width: 240px;
+    border: 1px solid black;
+    margin-right: 4px;
+    padding: 10px;
+}
+
+.firstcard{
+    width: 240px;
+    border: 2px solid black;
+    margin-right: 4px;
+    padding: 10px;   
+}
+
+.nodisplay{
+    display: none;
+}
+
+.displayblock{
+    display: block;
+}

@@ -1,0 +1,17 @@
+<div>
+    <h4 style="color: blue">LIST OF BRANDS:</h4>
+</div>
+<div style="display: flex;">
+    <div *ngFor="let content of contentList; let i = index" >
+        <div [ngClass]="(i > 0) ? contentcard: firstcard">
+        <p><strong>ID:</strong>   {{content.id}}</p>
+        <p><strong>TITLE:</strong>  {{content.title}}</p>
+        <img src="{{content.imgURL}}" width="240" height="216" alt="" (click)="imageClick(i)">
+        <p><strong>DESCRIPTION:</strong>  {{content.description}}</p>
+        <p><strong>PRIZE:</strong>  {{content.prize}}</p>
+        <p><strong>SIZE:<span *ngFor="let size of content?.tags">{{" "}}{{ size }}</span></strong></p>
+    </div>
+        
+    </div>
+</div>
+
